@@ -3,6 +3,7 @@
 using namespace std;
 int candy(vector<int>& ratings) {
     int n = ratings.size(), candies = 0, altitude = 1;
+    // 其实可以用greedy O(n)...
     // 建图，if ratings[i-1] < ratings[i]  i-1 指向i 
     vector<unordered_set<int> > graph(n);
     for (int i = 0; i < n-1; i++)  if (ratings[i] < ratings[i+1]) graph[i].insert(i+1);
