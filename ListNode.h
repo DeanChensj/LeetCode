@@ -13,7 +13,7 @@ struct ListNode {
 ListNode * genRandList(int len, int maxVal){
     ListNode *head = new ListNode(random(maxVal));
     ListNode *q = head;
-    for (int i = 1; i < len; ++i)
+    for (int i = 1; i <= len; ++i)
     {
         q->next = new ListNode(random(maxVal));
         q = q->next;
@@ -24,7 +24,7 @@ ListNode * genRandList(int len, int maxVal){
 ListNode * genOrderList(int len){
     ListNode *head = new ListNode(1);
     ListNode *q = head;
-    for (int i = 2; i < len; ++i)
+    for (int i = 2; i <= len; ++i)
     {
         q->next = new ListNode(i);
         q = q->next;
