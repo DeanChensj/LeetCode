@@ -11,5 +11,10 @@
 #include <cmath>
 #include <stdio.h>
 #include <list>
+#include <map>
+#include <set>
+#include <unordered_set>
+#include <stdlib.h>
+#define random(x) (rand() % x + 1)
 
 #endif 
