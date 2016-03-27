@@ -20,12 +20,12 @@
 
 
 int random(int x) {
-    srand((int)time(0));
     return rand() % x + 1;
 }
 
 std::vector<int> genRandVector(int len, int maxVal){
     std::vector<int> v(len, 0);
+    srand((int)time(NULL));
     for (int i = 0; i < len; ++i)
     {
         v[i] = random(maxVal);
