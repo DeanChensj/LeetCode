@@ -11,6 +11,7 @@ struct ListNode {
 };
 
 ListNode * genRandList(int len, int maxVal){
+    srand((int)time(0));
     ListNode *head = new ListNode(random(maxVal));
     ListNode *q = head;
     for (int i = 1; i <= len; ++i)

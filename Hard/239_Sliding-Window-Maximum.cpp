@@ -40,7 +40,7 @@ int main(int argc, char const *argv[])
 {
     vector<int> v = genRandVector(10, 10);
 	cout << "v = " << toString(v) << endl;
-    vector<int> ans = maxSlidingWindow(v, random(10));
+    vector<int> ans = maxSlidingWindow(v, 3);
     cout << "maxSlidingWindow(v) = " << toString(ans) << endl;
 	return 0;
 }

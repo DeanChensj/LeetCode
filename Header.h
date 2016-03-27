@@ -16,7 +16,13 @@
 #include <unordered_set>
 #include <stdlib.h>
 #include <deque>
-#define random(x) (rand() % x + 1)
+#include <time.h>
+
+
+int random(int x) {
+    srand((int)time(0));
+    return rand() % x + 1;
+}
 
 std::vector<int> genRandVector(int len, int maxVal){
     std::vector<int> v(len, 0);
