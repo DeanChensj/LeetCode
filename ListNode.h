@@ -33,6 +33,21 @@ ListNode * genOrderList(int len){
     return head;
 }
 
+ListNode * genListFromStr(string str){
+    ListNode *head = new ListNode(0), *tmp = head;
+    int i = 0, j;
+    while (i < str.length()) {
+        while (i < str.length() && (str[i] < '0' || str[i] > '9')) i++;
+        j = 0;
+        for (; i+j < str.length() && str[i+j] <= '9' && str[i+j] >= '0'; j++);
+        int t = atoi(str.substr(i, j).c_str());
+        tmp->next = new ListNode(t);
+        tmp = tmp->next;
+        i += j;
+    }
+    return head->next;
+}
+
 string toString(ListNode *head) {
     string res = "[";
     ListNode *t = head;
