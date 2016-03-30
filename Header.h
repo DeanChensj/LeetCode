@@ -17,14 +17,14 @@
 #include <stdlib.h>
 #include <deque>
 #include <time.h>
-
+using namespace std;
 
 int random(int x) {
     return rand() % x + 1;
 }
 
-std::vector<int> genRandVector(int len, int maxVal){
-    std::vector<int> v(len, 0);
+vector<int> genRandVector(int len, int maxVal){
+    vector<int> v(len, 0);
     srand((int)time(NULL));
     for (int i = 0; i < len; ++i)
     {
@@ -33,8 +33,9 @@ std::vector<int> genRandVector(int len, int maxVal){
     return v;
 }
 
-std::vector<int> genOrderedVector(int len){
-    std::vector<int> v(len, 0);
+
+vector<int> genOrderedVector(int len){
+    vector<int> v(len, 0);
     for (int i = 1; i <= len; ++i)
     {
         v[i-1] = i;
@@ -42,12 +43,34 @@ std::vector<int> genOrderedVector(int len){
     return v;
 }
 
-std::string toString(std::vector<int> v) {
-    std::string res = "[";
-    for (int i = 0; i < v.size() - 1; i++){
-        res += std::to_string(v[i]) + ", ";
+vector<string> genStrVector(string str){
+    vector<string> v;
+    int i = 0, j;
+    while (i < str.length()) {
+        while (i < str.length() && str[i] == ' ') i++;
+        j = 0;
+        for (; i+j < str.length() && str[i+j] != ' '; j++);
+        v.push_back(str.substr(i, j));
+        i += j;
     }
-    res += std::to_string(v[v.size() - 1]) + "]";
+    return v;
+}
+
+string toString(vector<int> v) {
+    string res = "[";
+    for (int i = 0; i < v.size() - 1; i++){
+        res += to_string(v[i]) + ", ";
+    }
+    res += to_string(v[v.size() - 1]) + "]";
+    return res;
+}
+
+string toString(vector<string> v) {
+    string res = "[";
+    for (int i = 0; i < v.size() - 1; i++){
+        res += v[i] + ", ";
+    }
+    res += v[v.size() - 1] + "]";
     return res;
 }
 
